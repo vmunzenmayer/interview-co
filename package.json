@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "after-30-days": "node src/index.js",
-    "test": "mocha spec/*.js"
+    "test": "jest --verbose --forceExit --detectOpenHandles"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,15 @@
   "homepage": "https://github.com/comparaonline/test-software-engineer#readme",
   "devDependencies": {
     "jest": "^24.9.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage/",
+    "coveragePathIgnorePatterns": [
+      "coverage",
+      "node_modules",
+      "src/index.js"
+    ],
+    "testEnvironment": "node"
   }
 }
